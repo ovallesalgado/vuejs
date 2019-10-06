@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{titulo}}</h1>
+
+        <input type="text" v-model="nuevoCarro" @keyup.enter="agregarCarro">
+               <button @click="agregarCarro" >Agregar</button>
+        
+        <ul>
+            <li v-for="carro of carros">
+                <input type="number" v-model.number="carro.cantidad">
+               {{carro.nombre}}
+               <button @click=carro.cantidad++>+</button>
+               <button @click=carro.cantidad-->-</button>
+                <span v-if="carro.cantidad === 0">-Sin stock</span>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="01.js"></script>    
+</body>
+</html>
